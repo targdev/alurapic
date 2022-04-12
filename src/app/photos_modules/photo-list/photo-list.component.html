@@ -1,1 +1,14 @@
-<ap-photo-properties [photos]="photosList"></ap-photo-properties>
+<div class="text-center mt-3 mb-3">
+    <form>
+        <input
+            class="rounded"
+            type="search"
+            placeholder="Search..."
+            autofocus
+            (keyup)="onKeyUp($event.target)">
+    </form>
+</div>
+
+<ap-photo-properties 
+    [photos]="photosList | filterByDescription: filter">
+</ap-photo-properties>

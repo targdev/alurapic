@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { typePhoto } from 'src/app/services/photo.model';
 
 @Component({
@@ -6,23 +6,25 @@ import { typePhoto } from 'src/app/services/photo.model';
   templateUrl: './photo-properties.component.html',
   styleUrls: ['./photo-properties.component.scss']
 })
-export class PhotoPropertiesComponent implements OnInit {
+export class PhotoPropertiesComponent implements OnChanges {
+
   @Input() photos: typePhoto[] = [];
-  rows: any[] = []
+  rows: any[] = [];
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.rows = this.groupColumns(this.photos);
+  ngOnChanges(changes: SimpleChanges) {
+      if(changes['photos'])
+          this.rows = this.groupColumns(this.photos);
   }
 
   groupColumns(photos: typePhoto[]) {
-    let newRows = [];
+      const newRows = [];
 
-    for(let i = 0; i < photos.length; i += 3) {
-      newRows.push(photos.slice(i, i + 3));
-    }
+      for(let index = 0; index < photos.length; index += 3) {
+          newRows.push(photos.slice(index, index + 3));
+      }
 
-    return newRows;
+      return newRows;
   }
 }
