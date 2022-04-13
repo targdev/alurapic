@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './photos.component.html',
   styleUrls: ['./photos.component.scss']
 })
-export class PhotosComponent implements OnInit {
+export class ApPhotosComponent implements OnInit {
   @Input() url = '';
   @Input() description = '';
 

@@ -1,4 +1,5 @@
 export interface typePhoto {
+    filter: any;
     id:number;
     postDate:Date;
     url:string;

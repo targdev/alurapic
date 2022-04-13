@@ -12,3 +12,5 @@
 <ap-photo-properties 
     [photos]="photosList | filterByDescription: filter">
 </ap-photo-properties>
+
+<ap-load-button (click)="loadMorePhotos()" [hasMore]="hasMore"></ap-load-button>
