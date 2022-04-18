@@ -1,17 +1,11 @@
-<div class="text-center mt-3 mb-3">
-    <form>
-        <i aria-hidden="true" class="fa fa-search me-2"></i>
-        <input
-            class="rounded"
-            type="search"
-            placeholder="Search..."
-            autofocus
-            (keyup)="onKeyUp($event.target)">
-    </form>
-</div>
+<ap-search-photos 
+(onTyping)="filter = $event" [value]="filter">
+</ap-search-photos>
 
 <ap-photo-properties 
     [photos]="photosList | filterByDescription: filter">
 </ap-photo-properties>
 
-<ap-load-button (click)="loadMorePhotos()" [hasMore]="hasMore"></ap-load-button>
+<ap-load-button 
+(click)="loadMorePhotos()" [hasMore]="hasMore">
+</ap-load-button>
