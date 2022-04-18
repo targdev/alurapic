@@ -5,8 +5,8 @@ import { PhotoListComponent } from './photo-list.component';
 import { PhotoPropertiesComponent } from './photo-properties/photo-properties.component';
 import { LoadButtonComponent } from './load-button/load-button.component';
 import { FilterByDescription } from './filter-by-description.pipe';
-import { ApPhotosComponent } from '../ap-photos/photos.component';
 import { ApPhotosModule } from '../ap-photos/photos.module';
+import { CardModule } from 'src/app/shared/components/card/card.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { ApPhotosModule } from '../ap-photos/photos.module';
   ],
   imports: [
     CommonModule,
-    ApPhotosModule
+    ApPhotosModule,
+    CardModule
   ]
 })
 export class PhotoListModule { }

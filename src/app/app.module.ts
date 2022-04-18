@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { PhotosModule } from './photos_modules/photos.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
