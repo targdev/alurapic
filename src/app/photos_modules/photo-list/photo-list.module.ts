@@ -7,18 +7,22 @@ import { LoadButtonComponent } from './load-button/load-button.component';
 import { FilterByDescription } from './filter-by-description.pipe';
 import { ApPhotosModule } from '../ap-photos/photos.module';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { SearchPhotosComponent } from './search-photos/search-photos.component';
+import { DarkenOnHoverModule } from 'src/app/shared/directives/darken-on-hover/darken-on-hover.module';
 
 @NgModule({
   declarations: [
     PhotoListComponent,
     PhotoPropertiesComponent,
     LoadButtonComponent,
-    FilterByDescription
+    FilterByDescription,
+    SearchPhotosComponent
   ],
   imports: [
     CommonModule,
     ApPhotosModule,
-    CardModule
+    CardModule,
+    DarkenOnHoverModule
   ]
 })
 export class PhotoListModule { }
